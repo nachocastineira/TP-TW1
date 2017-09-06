@@ -1,5 +1,9 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Barrio {
@@ -20,6 +25,9 @@ public class Barrio {
 	@ManyToOne (fetch = FetchType.LAZY)  //muchos barrios pertenecen a una comuna
 	@JoinColumn (name="idComuna")  //se joinea con el id de comuna
 	private Comuna Comuna;
+	
+	@OneToMany (mappedBy="barrio", cascade=CascadeType.ALL) //En un barrio hay muchas direcciones
+	private List<Direccion> direcciones = new ArrayList(); 
 	
 	
 	//CONSTRUCTORES
@@ -57,6 +65,8 @@ public class Barrio {
 	public void setComuna(Comuna comuna) {
 		Comuna = comuna;
 	}
+	
+	
 
 	
 	//HASHCODE Y EQUALS
