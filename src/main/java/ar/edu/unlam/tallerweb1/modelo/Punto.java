@@ -19,8 +19,8 @@ public class Punto {
 	private String latitud;
 	private String longitud;
 	
-	@OneToMany(mappedBy="farmacia" , cascade=CascadeType.ALL)
-	private List<Punto> puntos = new ArrayList();
+	
+	//CONSTRUCTORES
 	
 	public Punto(){}
 	
@@ -28,6 +28,9 @@ public class Punto {
 		this.latitud = latitud;
 		this.longitud = longitud;
 	}
+	
+	
+	//GETTERS Y SETTERS 
 	
 	public Long getIdPunto() {
 		return idPunto;

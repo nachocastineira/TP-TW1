@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Farmacia {
@@ -26,6 +28,10 @@ public class Farmacia {
 	@JoinColumn(name="idPunto")
 	private Punto geoLocalizacion;
 	
+	
+	
+	//CONSTRUCTORES
+	
 	public Farmacia(){}
 	
 	public Farmacia(String nombreFarmacia , String telefonoFarmacia){
@@ -33,6 +39,9 @@ public class Farmacia {
 		this.telefonoFarmacia = telefonoFarmacia;
 	}
 
+	
+	//GETTERS Y SETTERS 
+	
 	public Long getIdFarmacia() {
 		return idFarmacia;
 	}

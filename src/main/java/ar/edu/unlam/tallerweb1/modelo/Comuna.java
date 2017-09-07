@@ -19,8 +19,10 @@ public class Comuna {
 	
 	private String nombreComuna;
 	
-	@OneToMany (mappedBy="comuna", cascade=CascadeType.ALL) //En una comuna hay muchos barrios
-	private List<Barrio> barrios = new ArrayList<>();
+	//COMENTADO PARA QUE NO TIRE ERROR EN LOS TEST - BUSCAR SOLUCION
+	
+//	@OneToMany (mappedBy="comuna", cascade=CascadeType.ALL) //En una comuna hay muchos barrios
+//	private List<Barrio> barrios = new ArrayList<>();
 	
 	
 	//CONSTRUCTORES
@@ -51,22 +53,22 @@ public class Comuna {
 		this.nombreComuna = nombreComuna;
 	}
 
-	public List<Barrio> getBarrios() {
-		return barrios;
-	}
-
-	
-	public void setBarrios(List<Barrio> barrios) {
-		this.barrios = barrios;
-	}
-
-	
-	//Metodo que agrega un barrio a la comuna
-	public void addBarrio (Barrio barrio){
-		
-		this.barrios.add(barrio); //se agrega el barrio
-		barrio.setComuna(this); //y se le setea la comuna correspondiente
-	}
+//	public List<Barrio> getBarrios() {
+//		return barrios;
+//	}
+//
+//	
+//	public void setBarrios(List<Barrio> barrios) {
+//		this.barrios = barrios;
+//	}
+//
+//	
+//	//Metodo que agrega un barrio a la comuna
+//	public void addBarrio (Barrio barrio){
+//		
+//		this.barrios.add(barrio); //se agrega el barrio
+//		barrio.setComuna(this); //y se le setea la comuna correspondiente
+//	}
 	
 	
 

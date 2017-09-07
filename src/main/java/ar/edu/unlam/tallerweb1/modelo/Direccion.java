@@ -67,9 +67,8 @@ public class Direccion {
 	public void setBarrio(Barrio barrio) {
 		this.barrio = barrio;
 	}
-	
-	
-	
+
+
 	
 	
 
