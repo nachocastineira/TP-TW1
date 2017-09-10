@@ -1,13 +1,9 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -20,12 +16,10 @@ public class Farmacia {
 	private String telefonoFarmacia;
 	private String diaDeTurno;
 	
-	@ManyToOne (fetch = FetchType.LAZY)
-	@JoinColumn(name="idDireccion")
+	@OneToOne
 	private Direccion direccion;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="idPunto")
+	@OneToOne
 	private Punto geoLocalizacion;
 	
 	
@@ -89,6 +83,12 @@ public class Farmacia {
 	public void setGeoLocalizacion(Punto geoLocalizacion) {
 		this.geoLocalizacion = geoLocalizacion;
 	}
+
+	
+
+	
+
+
 	
 	
 	
