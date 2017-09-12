@@ -8,14 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<h1>Suma: ${suma}</h1>
-			<c:forEach var="i" items="${suma}">
-				<h1>Suma:</h1>
-					<c:out value="${i}">
-						
-					</c:out>
-			</c:forEach>
+	<div class="row">
+		<form:form action="obtener-resultado-erroneo" method="POST" modelAttribute="suma">
+			<div class="container">
+				<form:input path="valor1" type="text" placeholder="Numero 1"/>
+				<form:input path="valor2" type="text" placeholder="Numero 2"/>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Calcular</button>
+			</div>
+		</form:form>
 	</div>
 
 </body>

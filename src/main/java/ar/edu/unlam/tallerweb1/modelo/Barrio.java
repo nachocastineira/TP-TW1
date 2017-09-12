@@ -19,7 +19,7 @@ public class Barrio {
 	
 	@ManyToOne (fetch = FetchType.LAZY)  //muchos barrios pertenecen a una comuna
 	@JoinColumn (name="idComuna")  //se joinea con el id de comuna
-	private Comuna Comuna;
+	private Comuna idComuna;
 	
 	
 	//CONSTRUCTORES
@@ -51,11 +51,11 @@ public class Barrio {
 	}
 
 	public Comuna getComuna() {
-		return Comuna;
+		return idComuna;
 	}
 
 	public void setComuna(Comuna comuna) {
-		Comuna = comuna;
+		idComuna = comuna;
 	}
 	
 	
@@ -67,7 +67,7 @@ public class Barrio {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Comuna == null) ? 0 : Comuna.hashCode());
+		result = prime * result + ((idComuna == null) ? 0 : idComuna.hashCode());
 		result = prime * result + ((idBarrio == null) ? 0 : idBarrio.hashCode());
 		result = prime * result + ((nombreBarrio == null) ? 0 : nombreBarrio.hashCode());
 		return result;
@@ -82,10 +82,10 @@ public class Barrio {
 		if (getClass() != obj.getClass())
 			return false;
 		Barrio other = (Barrio) obj;
-		if (Comuna == null) {
-			if (other.Comuna != null)
+		if (idComuna == null) {
+			if (other.idComuna != null)
 				return false;
-		} else if (!Comuna.equals(other.Comuna))
+		} else if (!idComuna.equals(other.idComuna))
 			return false;
 		if (idBarrio == null) {
 			if (other.idBarrio != null)

@@ -23,7 +23,7 @@ public class Comuna {
 	
 	//COMENTADO PARA QUE NO TIRE ERROR EN LOS TEST - BUSCAR SOLUCION 
 	
-	@OneToMany (mappedBy="comuna", cascade=CascadeType.ALL) //En una comuna hay muchos barrios
+	@OneToMany (mappedBy="idComuna", cascade=CascadeType.ALL) //En una comuna hay muchos barrios
 	private List<Barrio> barrios = new ArrayList<Barrio>();
 	
 	
