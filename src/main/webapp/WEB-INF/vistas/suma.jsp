@@ -13,7 +13,7 @@
 <body>
 	<div class="container">
 		<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-			<form:form action="obtener-resultado-erroneo" method="POST" modelAttribute="suma">
+			<form:form action="mi-suma" method="POST" modelAttribute="suma">
 				<h3 class="form-signin-heading">Calcular suma</h3>
 				<hr class="colorgraph"><br>
 				<form:input path="valor1" type="text" placeholder="Numero 1" class="form-control"/>
