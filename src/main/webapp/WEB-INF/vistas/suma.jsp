@@ -12,9 +12,9 @@
 </head>
 <body>
 
-	<h3>
-		La suma de ${primerValor} y ${segundoValor} es ${resultado}
-	</h3>
+	<h2>
+		La suma de ${primerValor} + ${segundoValor} es igual a ${resultado}
+	</h2>
 	
 </body>
 </html>

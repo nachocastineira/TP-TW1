@@ -12,6 +12,14 @@ import ar.edu.unlam.tallerweb1.modelo.Suma;
 
 @Controller
 public class ControladorSuma {
+	
+	
+	@RequestMapping(path = "/error", method = RequestMethod.GET)
+	public ModelAndView irAError() {
+		return new ModelAndView("error");
+	}
+	
+	
 
 	@RequestMapping(path = "/suma/{primerValor}/{segundoValor}/{resultado}" , method = RequestMethod.GET)
 	public ModelAndView calcularSuma(@PathVariable Integer primerValor , @PathVariable Integer segundoValor , @PathVariable Integer resultado) {
@@ -24,6 +32,15 @@ public class ControladorSuma {
 		
 		miModelo.put("resultado", primerValor + segundoValor);
 		
+		if(resultado!=(primerValor+segundoValor))
+		{
+			return new ModelAndView("redirect:/error");
+		}
+		
+		
 		return new ModelAndView("suma", miModelo);
 	}
+
+	
+	
 }
