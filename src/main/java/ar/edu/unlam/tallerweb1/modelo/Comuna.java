@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -20,8 +18,6 @@ public class Comuna {
 	private Long idComuna;
 	
 	private String nombreComuna;
-	
-	//COMENTADO PARA QUE NO TIRE ERROR EN LOS TEST - BUSCAR SOLUCION 
 	
 	@OneToMany (mappedBy="idComuna", cascade=CascadeType.ALL) //En una comuna hay muchos barrios
 	private List<Barrio> barrios = new ArrayList<Barrio>();
