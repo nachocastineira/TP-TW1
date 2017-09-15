@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
@@ -25,7 +27,6 @@ public class ControladorLogin {
 	// Este metodo escucha la URL localhost:8080/NOMBRE_APP/login si la misma es invocada por metodo http GET
 	@RequestMapping("/login")
 	public ModelAndView irALogin() {
-
 		ModelMap modelo = new ModelMap();
 		// Se agrega al modelo un objeto del tipo Usuario con key 'usuario' para que el mismo sea asociado
 		// al model attribute del form que esta definido en la vista 'login'
@@ -34,6 +35,21 @@ public class ControladorLogin {
 		// Se va a la vista login (el nombre completo de la lista se resuelve utilizando el view resolver definido en el archivo spring-servlet.xml)
 		// y se envian los datos a la misma  dentro del modelo
 		return new ModelAndView("login", modelo);
+	}
+	
+	/* metodo de prueba que no va con el proyecto-limpio-spring
+	 * La anotacion requestParam requiere por get lo que esta en la url*/
+	@RequestMapping(path = "/saludar/{nombre}/conapellido/{apellido}" , method = RequestMethod.GET)
+	public ModelAndView saludar(/*@RequestParam("nombre")*/@PathVariable String nombre , /*@RequestParam("apellido")*/ @PathVariable String apellido) {
+		
+		ModelMap miModelo = new ModelMap();
+		
+		
+		miModelo.put("nombre", nombre);
+		
+		miModelo.put("apellido", apellido);
+		
+		return new  ModelAndView("saludar", miModelo);
 	}
 
 	// Este metodo escucha la URL validar-login siempre y cuando se invoque con metodo http POST
