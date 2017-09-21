@@ -50,6 +50,34 @@ public class ControladorSuma {
 		
 		return new ModelAndView("suma", miModelo);
 	}
+	
+	@RequestMapping(path = "multiplicar/{primerValor}/{segundoValor}" , method = RequestMethod.GET)
+	public ModelAndView calcularMultiplicacion(@PathVariable Integer primerValor , @PathVariable Integer segundoValor ) {
+		
+		Integer resultado = primerValor * segundoValor;
+		
+		ModelMap miModelo = new ModelMap();
+		
+		switch(resultado) {
+		
+		}
+		
+		
+		miModelo.put("primerValor", primerValor);
+		
+		miModelo.put("segundoValor", segundoValor);
+		
+		miModelo.put("resultado", resultado);
+		
+		if(resultado!=(primerValor*segundoValor))
+		{
+			return new ModelAndView("redirect:/error");
+		}
+		
+		
+		return new ModelAndView("multiplicar", miModelo);
+	}
+
 
 	
 	
