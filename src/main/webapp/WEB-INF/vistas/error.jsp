@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div class = "container">
-			<h1>Error: El resultado de la suma es incorrecto</h1>
+			<h1>La operación es inválida. Elija entre SUMA, RESTA o MULTIPLICAR.</h1>
 		</div>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
