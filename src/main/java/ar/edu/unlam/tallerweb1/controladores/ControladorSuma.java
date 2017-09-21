@@ -14,23 +14,33 @@ import ar.edu.unlam.tallerweb1.modelo.Suma;
 public class ControladorSuma {
 	
 	
-	@RequestMapping(path = "/error", method = RequestMethod.GET)
-	public ModelAndView irAError() {
-		return new ModelAndView("error");
+	@RequestMapping(path = "error/{primerValor}/{segundoValor}", method = RequestMethod.GET)
+	public ModelAndView irAError(@PathVariable Integer primerValor , @PathVariable Integer segundoValor ) {
+		
+		ModelMap miModelo = new ModelMap();
+		
+		return new ModelAndView("error", miModelo);
 	}
 	
 	
-
-	@RequestMapping(path = "/suma/{primerValor}/{segundoValor}/{resultado}" , method = RequestMethod.GET)
-	public ModelAndView calcularSuma(@PathVariable Integer primerValor , @PathVariable Integer segundoValor , @PathVariable Integer resultado) {
+	
+	@RequestMapping(path = "suma/{primerValor}/{segundoValor}" , method = RequestMethod.GET)
+	public ModelAndView calcularSuma(@PathVariable Integer primerValor , @PathVariable Integer segundoValor ) {
+		
+		Integer resultado = primerValor + segundoValor;
 		
 		ModelMap miModelo = new ModelMap();
+		
+		switch(resultado) {
+		
+		}
+		
 		
 		miModelo.put("primerValor", primerValor);
 		
 		miModelo.put("segundoValor", segundoValor);
 		
-		miModelo.put("resultado", primerValor + segundoValor);
+		miModelo.put("resultado", resultado);
 		
 		if(resultado!=(primerValor+segundoValor))
 		{
