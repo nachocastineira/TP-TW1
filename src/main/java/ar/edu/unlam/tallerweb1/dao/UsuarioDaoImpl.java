@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
+
 import javax.inject.Inject;
 
 // implelemtacion del DAO de usuarios, la anotacion @Repository indica a Spring que esta clase es un componente que debe
@@ -30,6 +32,11 @@ public class UsuarioDaoImpl implements UsuarioDao {
 				.add(Restrictions.eq("email", usuario.getEmail()))
 				.add(Restrictions.eq("password", usuario.getPassword()))
 				.uniqueResult();
+	}
+
+	@Override
+	public Usuario consultarEmail(Usuario usuario) {
+		return null;
 	}
 
 }
